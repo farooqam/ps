@@ -3,14 +3,12 @@
 
   // Declare app level module which depends on views, and components
   angular.module('rootModule', [
-    'ngRoute',
-    'rootModule.view1',
-    'rootModule.view2'
+    'ngRoute'
   ]).
     config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
       $locationProvider.hashPrefix('!');
 
-      $routeProvider.otherwise({ redirectTo: '/view1' });
+      $routeProvider.otherwise({ redirectTo: '/' });
     }]);
 })();
 
