@@ -9,10 +9,12 @@
         },
         controller: [
           function() {
-            angular.extend(this, {
+            var $ctrl = this;
+
+            angular.extend($ctrl, {
               $onInit: function() {
-                this.course = {
-                  courseId: this.courseId
+                $ctrl.course = {
+                  courseId: $ctrl.courseId
                 };
               }
             });

@@ -67,6 +67,7 @@
     }]);
 
     rootModule.value('componentBorders', true);
+    rootModule.value('apiBase', 'http://pluralsightcourseviewer.azurewebsites.net/api/courseviewer');
 
     rootModule.run(function (componentBorders) {
         if (componentBorders) {

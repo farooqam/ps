@@ -4,12 +4,21 @@
     angular.module('rootModule')
       .component('courseList',  {
         templateUrl: 'courseList/courseList.component.html',
-        controller: [
-          function() {
-            angular.extend(this, {
-              courseId: 0,
+        controller: ['apiBase', '$http', '$log',
+          function(apiBase, $http, $log) {
+            var $ctrl = this;
+
+            angular.extend($ctrl, {
+              courses: {}
+            });
+
+            angular.extend($ctrl, {
               $onInit: function() {
-                this.courseId = 200;
+                $http.get(apiBase + '/courses')
+                  .then(function(result) {
+                    $log.info(result.data);
+                    $ctrl.courses = result.data;
+                  });
               }
             });
           }
