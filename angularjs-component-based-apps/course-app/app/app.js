@@ -7,7 +7,7 @@
     ]);
 
 
-    rootModule.config(['$stateProvider', function ($stateProvider) {
+    rootModule.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         var states = [
             {
                 name: 'home',
@@ -25,12 +25,40 @@
                 template: '<course-list></course-list>'
             },
             {
+                name: 'course',
+                url: '/courses/{courseId}',
+                resolve: {
+                    courseId: function($stateParams) {
+                        return $stateParams.courseId;
+                    }
+                },
+                template: '<course course-id="$resolve.courseId"></course>'
+            },
+            {
+                name: 'course.modules',
+                url: '/modules',
+                template: '<course-modules course="$ctrl.course"></course-modules>'
+            },
+            {
+                name: 'course.description',
+                url: '/description',
+                template: '<course-description course="$ctrl.course"></course-description>'
+            },
+            {
+                name: 'course.discussion',
+                url: '/discussion',
+                template: '<course-discussion course="$ctrl.course"></course-discussion>'
+            },
+            {
                 name: 'authors',
                 url: '/authors',
                 template: '<author-list></author-list>'
             }
         ];
 
+        $urlRouterProvider.when('/courses/:courseId', '/courses/:courseId/description');
+        $urlRouterProvider.otherwise('/');
+        
         states.forEach(function(state) {
             $stateProvider.state(state);
         });
