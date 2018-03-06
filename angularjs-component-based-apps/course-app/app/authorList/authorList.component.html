@@ -1,1 +1,16 @@
 <h3>AUTHOR LIST</h3>
+<hr />
+<div ng-if="!$ctrl.authors">
+    <h3>NO AUTHORS</h3>
+</div>
+
+<div ng-if="$ctrl.authors">
+    <div class="row">
+        <div class="col-md-3"><h4>AUTHOR NAME</h4></div>
+    </div>
+    <div class="row" ng-repeat="author in $ctrl.authors">
+        <div class="col-md-3">
+            <a ui-sref="author({authorId: author.AuthorId})">{{author.FirstName}} {{author.LastName}}</a>
+        </div>
+    </div>
+</div>

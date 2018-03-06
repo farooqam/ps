@@ -53,7 +53,27 @@
                 name: 'authors',
                 url: '/authors',
                 template: '<author-list></author-list>'
-            }
+            },
+            {
+                name: 'author',
+                url: '/authors/{authorId}',
+                resolve: {
+                    authorId: function($stateParams) {
+                        return $stateParams.authorId;
+                    }
+                },
+                template: '<course-author-info author-id="$resolve.authorId"></course-author-info>'
+            },
+            {
+                name: 'author.bio',
+                url: '/bio',
+                template: '<author-bio author="$ctrl.author"></author-bio>'
+            },
+            {
+                name: 'author.courses',
+                url: '/courses',
+                template: '<author-courses author="$ctrl.author"></author-courses>'
+            },
         ];
 
         $urlRouterProvider.when('/courses/:courseId', '/courses/:courseId/description');
