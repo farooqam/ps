@@ -15,7 +15,9 @@
                     canContact: true,
                     shortBio: 'He is a cool guy!',
                     address: {
-                        city: 'Redmond'
+                        city: 'Redmond',
+                        state: 'WA',
+                        street: '123 Main St.'
                     }
                 }
             });
