@@ -8,7 +8,13 @@
             var $ctrl = this;
 
             angular.extend($ctrl, {
-                message: ''
+                message: '',
+                user: {
+                    name: 'Farooq Mahmud',
+                    address: {
+                        city: 'Redmond'
+                    }
+                }
             });
 
             angular.extend($ctrl, {
