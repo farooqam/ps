@@ -1,7 +1,9 @@
 <div class="col-sm-6">
     <div class="card">
-        <div class="card-body">
+        <div class="card-header" ng-click="collapseCard()">
             <h5 class="card-title">{{user.name}}</h5>
+        </div>
+        <div class="card-body" ng-hide="collapsed">
             <h6 class="card-subtitle mb-2 text-muted">From {{user.address.city}}</h6>
             <p class="card-text">{{user.shortBio}}</p>
             <a href="#" ng-hide="user.contacted || !user.canContact" class="btn btn-primary" ng-click="contactUser(user)">Contact</a>
