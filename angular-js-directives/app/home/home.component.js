@@ -11,6 +11,9 @@
                 message: '',
                 user: {
                     name: 'Farooq Mahmud',
+                    contacted: false,
+                    canContact: true,
+                    shortBio: 'He is a cool guy!',
                     address: {
                         city: 'Redmond'
                     }

@@ -1,10 +1,12 @@
 <div class="col-sm-6">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Contact</a>
+            <h5 class="card-title">{{user.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">From {{user.address.city}}</h6>
+            <p class="card-text">{{user.shortBio}}</p>
+            <a href="#" ng-hide="user.contacted || !user.canContact" class="btn btn-primary" ng-click="contactUser(user)">Contact</a>
+            <a href="#" ng-show="user.contacted" class="btn btn-default" ng-click="undoContactUser(user)">Undo</a>
+            
         </div>
     </div>
 </div>
