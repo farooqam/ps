@@ -7,11 +7,12 @@
                 restrict: 'E',
                 scope: {
                     user: '=',
-                    initialState: '@'
+                    initialState: '@',
+                    remove: '&'
                 },
                 replace: true,
                 templateUrl: 'common/userInfoCard/userInfoCard.directive.html',
-                link: function($scope, $element, $attrs) {
+                link: function($scope, $element, $attrs, $controller) {
                     $scope.collapsed = !($attrs.collapsed === undefined);
                     
                     $scope.contactUser = function(user) {
@@ -24,6 +25,11 @@
 
                     $scope.collapseCard = function() {
                         $scope.collapsed = !$scope.collapsed;
+                    }
+
+                    $scope.removeCard = function(user) {
+                        $log.info('userInfoCard directive removeCard called.');
+                        $scope.remove({user: user});
                     }
                 }
             }
