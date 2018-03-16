@@ -1,7 +1,17 @@
 <div class="col-sm-6" ng-show="user">
-    <div class="card">
+    <div class="card" style="width: 18rem;">
         <div class="card-header" ng-click="collapseCard()">
-            <h5 class="card-title">{{user.name}}</h5>
+            <div class="row">
+                    <div class="col-sm-10">
+                            <h5 class="card-title">{{user.name}}</h5>
+                    </div>
+                    <div class="col-sm-2" ng-hide="collapsed">
+                            <span class="oi oi-chevron-top pull-left" title="Collapse" ng-click=""></span>
+                    </div>
+                    <div class="col-sm-2" ng-show="collapsed">
+                            <span class="oi oi-chevron-bottom pull-left" title="Expand" ng-click=""></span>
+                    </div>
+            </div>
         </div>
         <div class="card-body" ng-hide="collapsed">
             <address class="card-subtitle mb-2 text-muted" user="user"></address>
