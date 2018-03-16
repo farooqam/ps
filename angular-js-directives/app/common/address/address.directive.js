@@ -5,7 +5,9 @@
         .directive('address', function() {
             return {
                 restrict: 'E',
-                scope: true,
+                scope: {
+                    user: '='
+                },
                 replace: true,
                 templateUrl: 'common/address/address.directive.html',
                 controller: ['$scope', function($scope){
