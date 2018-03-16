@@ -9,17 +9,42 @@
 
             angular.extend($ctrl, {
                 message: '',
-                user: {
-                    name: 'Farooq Mahmud',
-                    contacted: false,
-                    canContact: true,
-                    shortBio: 'He is a cool guy!',
-                    address: {
-                        city: 'Redmond',
-                        state: 'WA',
-                        street: '123 Main St.'
+                users: [
+                    {
+                        name: 'Farooq Mahmud',
+                        contacted: false,
+                        canContact: true,
+                        shortBio: 'He is a cool guy!',
+                        address: {
+                            city: 'Redmond',
+                            state: 'WA',
+                            street: '123 Main St.'
+                        }
+                    },
+                    {
+                        name: 'Yasin Mahmud',
+                        contacted: false,
+                        canContact: true,
+                        shortBio: 'He is a cool boy!',
+                        address: {
+                            city: 'Redmond',
+                            state: 'WA',
+                            street: '336 1st St.'
+                        }
+                    },
+                    {
+                        name: 'Noor Mahmud',
+                        contacted: false,
+                        canContact: true,
+                        shortBio: 'She is a cool girl!',
+                        address: {
+                            city: 'Redmond',
+                            state: 'WA',
+                            street: '336 1st St.'
+                        }
                     }
-                }
+                ]
+                
             });
 
             angular.extend($ctrl, {

@@ -1,15 +1,18 @@
 <div class="col-sm-6" ng-show="user">
-    <div class="card" style="width: 18rem;">
-        <div class="card-header" ng-click="collapseCard()">
+    <div class="card">
+        <div class="card-header">
             <div class="row">
-                    <div class="col-sm-10">
+                    <div class="col-sm-8">
                             <h5 class="card-title">{{user.name}}</h5>
                     </div>
                     <div class="col-sm-2" ng-hide="collapsed">
-                            <span class="oi oi-chevron-top pull-left" title="Collapse" ng-click=""></span>
+                            <span class="oi oi-chevron-top pull-left" title="Collapse" ng-click="collapseCard()"></span>
                     </div>
                     <div class="col-sm-2" ng-show="collapsed">
-                            <span class="oi oi-chevron-bottom pull-left" title="Expand" ng-click=""></span>
+                            <span class="oi oi-chevron-bottom pull-left" title="Expand" ng-click="collapseCard()"></span>
+                    </div>
+                    <div class="col-sm-2">
+                            <span class="oi oi-trash pull-left" title="Remove card"></span>
                     </div>
             </div>
         </div>
@@ -18,7 +21,6 @@
             <p class="card-text">{{user.shortBio}}</p>
             <a href="#" ng-hide="user.contacted || !user.canContact" class="btn btn-primary" ng-click="contactUser(user)">Contact</a>
             <a href="#" ng-show="user.contacted" class="btn btn-default" ng-click="undoContactUser(user)">Undo</a>
-            
         </div>
     </div>
 </div>

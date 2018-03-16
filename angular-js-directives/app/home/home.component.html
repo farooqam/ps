@@ -1,9 +1,4 @@
 <h1>{{$ctrl.message}}</h1>
-<div class="row">
-    <user-info-card user="$ctrl.user" collapsed></user-info-card>
-    <user-info-card></user-info-card>
-    <user-info-card></user-info-card>
-    <user-info-card></user-info-card>
-    <user-info-card></user-info-card>
-    <user-info-card></user-info-card>
+<div class="row" ng-repeat="user in $ctrl.users">
+    <user-info-card user="user"></user-info-card>
 </div>
