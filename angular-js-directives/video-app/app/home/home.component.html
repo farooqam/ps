@@ -1,5 +1,5 @@
 <div class="row">
-    <video spacebar-support id="videoPlayer" handle-pause="$ctrl.handlePause()" controls preload="none" poster="http://media.w3.org/2010/05/sintel/poster.png">
+    <video spacebar-support id="videoPlayer" handle-pause="$ctrl.handlePause(evt)" controls preload="none" poster="http://media.w3.org/2010/05/sintel/poster.png">
         <source ng-repeat="video in videos" src="{{video.src}}" type="{{video.type}}"></source>
     </video>
     <div ng-repeat="message in $ctrl.messages"></div>

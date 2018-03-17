@@ -12,7 +12,8 @@
             });
 
             angular.extend($ctrl, {
-              handlePause: function(){
+              handlePause: function(e){
+                $log.info(e);
                 $ctrl.messages.push({text: 'video paused'});
               }
             });
