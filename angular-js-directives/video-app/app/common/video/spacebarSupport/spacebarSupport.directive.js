@@ -24,6 +24,14 @@
                             }
                         }
                     });
+
+                    angular.extend($scope, {
+                        videos: [
+                            { src: 'http://media.w3.org/2010/05/sintel/trailer.mp4', type: 'video/mp4'},
+                            { src: 'http://media.w3.org/2010/05/sintel/trailer.webm5', type: 'video/webm'},
+                            { src: 'http://media.w3.org/2010/05/sintel/trailer.ogv', type: 'video/ogg'}                            
+                        ]
+                    });
                 }
             }
         }]);
