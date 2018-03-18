@@ -20,14 +20,6 @@
                 $ctrl.message = 'I have been clicked!';
               }
             });
-
-            angular.extend($ctrl, {
-              toggleUserSelect: function(user){
-                  $log.info('toggleUserSelect called.');
-                  user.selected = !user.selected
-              }
-            });
-
         }]
       });
   })();
