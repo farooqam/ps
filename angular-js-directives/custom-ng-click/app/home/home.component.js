@@ -8,7 +8,11 @@
             var $ctrl = this;
 
             angular.extend($ctrl, {
-              message: 'I have not been clicked.'
+              message: 'I have not been clicked.',
+              user1: {
+                name: 'Farooq Mahmud',
+                selected: false
+              }
             });
 
             angular.extend($ctrl, {
@@ -16,6 +20,14 @@
                 $ctrl.message = 'I have been clicked!';
               }
             });
+
+            angular.extend($ctrl, {
+              toggleUserSelect: function(user){
+                  $log.info('toggleUserSelect called.');
+                  user.selected = !user.selected
+              }
+            });
+
         }]
       });
   })();
