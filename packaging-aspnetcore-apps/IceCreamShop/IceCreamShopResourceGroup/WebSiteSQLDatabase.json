@@ -79,7 +79,7 @@
     }
   },
   "variables": {
-    "webSiteName": "iceCreamShop",
+    "webSiteName": "IceCreamShop",
     "sqlserverName": "[concat('sqlserver', uniqueString(resourceGroup().id))]"
   },
   "resources": [
